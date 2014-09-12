@@ -22,6 +22,12 @@
            String payment = request.getParameter("LoanRate");
            
            String receive = request.getParameter("LoanAmt");
+if (payment==null){
+ payment="0";
+};
+if (receive==null){
+receive="0";
+}
            
            Double paymentValue = service.getValue(payment);
            
@@ -65,7 +71,7 @@
 				<table style="border: 1px solid black;">
 				<tr>
                   <td width="150" id="ChangeAmt">เงินทอน</td>
-                  <td width="130"><div id="ChangeAmt" align="right"><%=remain%></div></td> &nbsp;&nbsp;
+                  <td width="130"><div id="ChangeAmt" align="right"><%= remain.intValue()%></div></td> &nbsp;&nbsp;
                 </tr>
 				<tr >
 
@@ -89,10 +95,6 @@
 				  <td></td>
                   <td>เหรียญ &nbsp;&nbsp; 10</td><td><%= results.get(10)%>  &nbsp;&nbsp; เหรียญ</td>
                 </tr>
-				<tr >
-				  <td></td>
-                  <td>เหรียญ &nbsp;&nbsp; 1</td><td><%= results.get(1 )%>  &nbsp;&nbsp; เหรียญ</td>
-                </tr>
 
 				
 				
@@ -104,12 +106,6 @@
 				<tr>
                   <td colspan="3"><br><div id="result" style="border-bottom: 3px solid red; border-top: 1px solid white; border-left: 1px solid white; border-right: 1px solid white; width: 100%;"></div></td>
                 </tr>
-                <tr>
-
-                  <td colspan="3" align="right">
-                    <br><font color="gray">โดย Scrum Group 1 <br></font>
-                  </td>
-                </tr>  
             </table>
         </form>
 </center>
